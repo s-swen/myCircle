@@ -1,0 +1,68 @@
+
+
+{% extends 'circle/base.html' %}
+
+
+
+{% block content %}
+<div class="main-content">
+    <h1>User's Circle</h1>
+    <div class="circle-table">
+        <div class="category">
+            <h3>Friends</h3>
+            <ul>
+                {% for friend in friends %}
+                    <li>{{ friend }}</li>
+                {% endfor %}
+            </ul>
+            <button>Add</button>
+            <a href="#">Show More</a>
+        </div>
+
+        <div class="category">
+            <h3>Professional</h3>
+            <ul>
+                {% for pro in professional %}
+                    <li>{{ pro }}</li>
+                {% endfor %}
+            </ul>
+            <button>Add</button>
+            <a href="#">Show More</a>
+        </div>
+
+        <div class="category">
+            <h3>Relatives</h3>
+            <ul>
+                {% for relative in relatives %}
+                    <li>{{ relative }}</li>
+                {% endfor %}
+            </ul>
+            <button>Add</button>
+            <a href="#">Show More</a>
+        </div>
+
+        <div class="category">
+            <h3>School</h3>
+            <ul>
+                {% for mate in school %}
+                    <li>{{ mate }}</li>
+                {% endfor %}
+            </ul>
+            <button>Add</button>
+            <a href="#">Show More</a>
+        </div>
+
+        <div class="category">
+            <h3>Love Interests</h3>
+            <ul>
+                {% for lover in love_interests %}
+                    <li>{{ lover }}</li>
+                {% endfor %}
+            </ul>
+            <button>Add</button>
+            <a href="#">Show More</a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

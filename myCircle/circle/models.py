@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.urls import reverse
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
@@ -11,6 +12,9 @@ class Profile(models.Model):
 class Category(models.Model):
     name = models.CharField(max_length=100)
 
+    class Meta:
+        ordering = ['name']
+        
     def __str__(self):
         return self.name
 
@@ -59,6 +63,8 @@ class Contact(models.Model):
     # File upload
     uploaded_document = models.FileField(upload_to='documents/', blank=True, null=True)
 
+    class Meta:
+        ordering = ['first_name']
     def __str__(self):
         return f"{self.first_name} {self.last_name}"
 
@@ -67,4 +73,8 @@ class Contact(models.Model):
         if self.custom_category:
             return self.custom_category.name
         return self.get_category_display()
+
+    def get_absolute_url(self):
+        '''Returns the URL to access a particular instance of the model'''
+        return reverse('contact-detail', args=[str(self.id)])
 

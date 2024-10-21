@@ -1,62 +1,64 @@
-
-
 {% extends 'circle/base.html' %}
-
-
 
 {% block content %}
 <div class="main-content">
     <h1>User's Circle</h1>
     <div class="circle-table">
+
+        <!-- Friends category -->
         <div class="category">
             <h3>Friends</h3>
             <ul>
                 {% for friend in friends %}
-                    <li>{{ friend }}</li>
+                    <li>{{ friend.first_name }} {{ friend.last_name }}</li>
                 {% endfor %}
             </ul>
             <button>Add</button>
             <a href="#">Show More</a>
         </div>
 
+        <!-- Professional category -->
         <div class="category">
             <h3>Professional</h3>
             <ul>
                 {% for pro in professional %}
-                    <li>{{ pro }}</li>
+                    <li>{{ pro.first_name }} {{ pro.last_name }}</li>
                 {% endfor %}
             </ul>
             <button>Add</button>
             <a href="#">Show More</a>
         </div>
 
+        <!-- Relatives category -->
         <div class="category">
             <h3>Relatives</h3>
             <ul>
                 {% for relative in relatives %}
-                    <li>{{ relative }}</li>
+                    <li>{{ relative.first_name }} {{ relative.last_name }}</li>
                 {% endfor %}
             </ul>
             <button>Add</button>
             <a href="#">Show More</a>
         </div>
 
+        <!-- School category -->
         <div class="category">
             <h3>School</h3>
             <ul>
                 {% for mate in school %}
-                    <li>{{ mate }}</li>
+                    <li>{{ mate.first_name }} {{ mate.last_name }}</li>
                 {% endfor %}
             </ul>
             <button>Add</button>
             <a href="#">Show More</a>
         </div>
 
+        <!-- Love Interests category -->
         <div class="category">
             <h3>Love Interests</h3>
             <ul>
                 {% for lover in love_interests %}
-                    <li>{{ lover }}</li>
+                    <li>{{ lover.first_name }} {{ lover.last_name }}</li>
                 {% endfor %}
             </ul>
             <button>Add</button>
@@ -64,5 +66,4 @@
         </div>
     </div>
 </div>
-
 {% endblock %}

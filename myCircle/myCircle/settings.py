@@ -56,7 +56,7 @@ ROOT_URLCONF = "myCircle.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [BASE_DIR / 'circle/templates'],
+        "DIRS": [os.path.join(BASE_DIR, 'templates')],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -68,6 +68,10 @@ TEMPLATES = [
         },
     },
 ]
+
+
+# Sadie: Redirect to home URL after login (Default redirects to /accounts/profile/)
+LOGIN_REDIRECT_URL = '/'
 
 WSGI_APPLICATION = "myCircle.wsgi.application"
 

@@ -1,0 +1,83 @@
+/* login.css */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #e3e0f7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+
+
+.login-box {
+    background: white;
+    border-radius: 15px;
+    padding: 40px;
+    position: relative;
+    max-width: 400px;
+    width: 100%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 600;
+    color: #5a4ae3;
+}
+
+.input-box {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.input-box input {
+    width: 87%;
+    padding: 10px;
+    padding-left: 40px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    outline: none;
+}
+
+.input-box i {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #5a4ae3;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+.login-btn:hover {
+    background-color: #4d41c9;
+}
+
+.signup-btn {
+    text-align: center;
+    width: 95%;
+    padding: 10px;
+    background-color: #fafafd;
+    border: 1px solid #ececec;
+    color: #999;
+    font-size: 16px;
+    border-radius: 25px;
+    cursor: pointer;
+
+}
+
+.signup-btn:hover {
+    background-color: #ebeaf8;
+}

@@ -20,11 +20,13 @@ from django.urls import path, include
 from django.views.generic import RedirectView
 from django.conf import settings
 from django.conf.urls.static import static
+from django.contrib.auth import urls
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path('circle/', include('circle.urls')),
     path("", RedirectView.as_view(url='circle/', permanent=True)),
+    path('accounts/', include(urls)),
 ]
 
 if settings.DEBUG:

@@ -6,7 +6,7 @@ from .models import Contact, Category
 @admin.register(Contact)
 class ContactAdmin(admin.ModelAdmin):
     list_display = ('first_name', 'last_name', 'email', 'get_category', )
-    list_filter = ('first_name',)
+    list_filter = ('first_name', 'category',)
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):

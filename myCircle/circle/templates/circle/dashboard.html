@@ -10,7 +10,9 @@
             <h3>Friends</h3>
             <ul>
                 {% for friend in friends %}
-                    <li>{{ friend.first_name }} {{ friend.last_name }}</li>
+                    <li>
+                        <a href="{% url 'contact-detail' friend.id %}">{{ friend.first_name }} {{ friend.last_name }}</a>
+                    </li>
                 {% endfor %}
             </ul>
             <button>Add</button>
@@ -22,7 +24,9 @@
             <h3>Professional</h3>
             <ul>
                 {% for pro in professional %}
-                    <li>{{ pro.first_name }} {{ pro.last_name }}</li>
+                    <li>
+                        <a href="{% url 'contact-detail' pro.id %}">{{ pro.first_name }} {{ pro.last_name }}</a>
+                    </li>
                 {% endfor %}
             </ul>
             <button>Add</button>
@@ -34,7 +38,9 @@
             <h3>Relatives</h3>
             <ul>
                 {% for relative in relatives %}
-                    <li>{{ relative.first_name }} {{ relative.last_name }}</li>
+                    <li>
+                        <a href="{% url 'contact-detail' relative.id %}">{{ relative.first_name }} {{ relative.last_name }}</a>
+                    </li>
                 {% endfor %}
             </ul>
             <button>Add</button>
@@ -46,7 +52,9 @@
             <h3>School</h3>
             <ul>
                 {% for mate in school %}
-                    <li>{{ mate.first_name }} {{ mate.last_name }}</li>
+                    <li>
+                        <a href="{% url 'contact-detail' mate.id %}">{{ mate.first_name }} {{ mate.last_name }}</a>
+                    </li>
                 {% endfor %}
             </ul>
             <button>Add</button>
@@ -58,7 +66,9 @@
             <h3>Love Interests</h3>
             <ul>
                 {% for lover in love_interests %}
-                    <li>{{ lover.first_name }} {{ lover.last_name }}</li>
+                    <li>
+                        <a href="{% url 'contact-detail' lover.id %}">{{ lover.first_name }} {{ lover.last_name }}</a>
+                    </li>
                 {% endfor %}
             </ul>
             <button>Add</button>

@@ -17,16 +17,20 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path, include
-from django.views.generic import RedirectView
+from django.contrib.auth.decorators import login_required
+# from django.views.generic import RedirectView
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.auth import urls
+from django.contrib.auth import views as auth_views
+from circle import views as circle_views
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path('circle/', include('circle.urls')),
-    path("", RedirectView.as_view(url='circle/', permanent=True)),
+    path("", login_required(circle_views.dashboard), name='dashboard'),
     path('accounts/', include(urls)),
+    path('circle/', include('circle.urls')),
+    path('logout/', auth_views.LogoutView.as_view(template_name='registration/logged_out.html'), name='logout'),
 ]
 
 if settings.DEBUG:

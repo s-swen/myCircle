@@ -1,19 +1,19 @@
-/* style.css */
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f9;
+    background-color: #f7f8fc; /* Lighter background color */
     width: 100%;
 }
 
 header {
-    background-color: #333;
+    background-color: #4a4e69; /* Dark purple */
     color: #fff;
-    padding: 10px;
+    padding: 15px;
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 header nav ul {
@@ -27,52 +27,54 @@ header nav ul {
 header nav ul li a {
     color: #fff;
     text-decoration: none;
+    font-weight: 600;
 }
-
 
 nav {
     position: relative;
-    height: 50px; /* Optional: Ensure there's enough height */
+    height: 50px;
 }
 
 .user-actions {
     display: flex;
-    gap: 20px; /* Adds space between the links */
+    gap: 20px;
 }
 
 .user-actions a {
     color: #fff;
     text-decoration: none;
+    font-weight: 600;
 }
 
 .user-profile-dropdown {
-    position: relative; /* Parent element needs to be relative for the dropdown positioning */
+    position: relative;
 }
 
 .dropdown-content {
-    display: none; /* Hidden by default */
+    display: none;
     position: absolute;
-    top: 100%; /* Positions the dropdown just below the User Profile link */
+    top: 100%;
     right: 0;
-    background-color: #333;
+    background-color: #4a4e69;
     padding: 10px;
-    border-radius: 4px;
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
 }
 
 .dropdown-content a {
-    color: white;
+    color: #f7f8fc;
     text-decoration: none;
-    display: block; /* Ensures the logout link takes up the full width */
+    display: block;
+    padding: 10px 0;
 }
 
 .dropdown-content a:hover {
-    background-color: #444;
+    background-color: #6b6e97;
 }
 
 .user-profile-dropdown:hover .dropdown-content {
-    display: block; /* Show the dropdown when hovering over User Profile */
+    display: block;
 }
-
 
 .dashboard {
     display: flex;
@@ -80,15 +82,18 @@ nav {
 }
 
 .sidebar {
-    width: 10%;
-    background-color: #2c3e50;
+    width: 12%;
+    background-color: #22223b; /* Deep navy */
     color: white;
-    padding: 20px;
+    padding: 25px;
     height: 100vh;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
 }
 
 .sidebar h2 {
-    font-size: 20px;
+    font-size: 22px;
+    margin-bottom: 20px;
+    color: #9a8c98; /* Soft lavender */
 }
 
 .sidebar ul {
@@ -101,17 +106,26 @@ nav {
 }
 
 .sidebar ul li a {
-    color: white;
+    color: #f2e9e4;
     text-decoration: none;
+    font-weight: 500;
+    padding: 10px;
+    display: block;
+    border-radius: 6px;
+    transition: background-color 0.3s;
+}
+
+.sidebar ul li a:hover {
+    background-color: #4a4e69;
 }
 
 .main-content {
     flex: 1;
-    padding: 20px;
+    padding: 25px;
     background-color: white;
     margin-left: 20px;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
     width: 85%;
 }
 
@@ -124,13 +138,15 @@ nav {
 .category {
     background-color: #f9f9f9;
     border: 1px solid #ccc;
-    padding: 10px;
+    padding: 15px;
     border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
 .category h3 {
     font-size: 18px;
     margin-bottom: 10px;
+    color: #4a4e69;
 }
 
 .category ul {
@@ -145,25 +161,30 @@ nav {
 button {
     display: block;
     margin-top: 10px;
-    padding: 5px 10px;
+    padding: 8px 15px;
     border: none;
-    background-color: #2980b9;
+    background-color: #4a4e69;
     color: white;
-    border-radius: 4px;
+    border-radius: 6px;
     cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s;
 }
 
 button:hover {
-    background-color: #3498db;
+    background-color: #6b6e97;
 }
 
 a {
     display: block;
     margin-top: 10px;
-    color: #3498db;
+    color: #4a4e69;
     text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
 }
 
 a:hover {
+    color: #6b6e97;
     text-decoration: underline;
 }

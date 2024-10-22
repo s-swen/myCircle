@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from .models import Contact
-
+from django.views import generic
 @login_required
 def dashboard(request):
     # Get the user's contacts from the database, grouped by category
@@ -25,3 +25,6 @@ def dashboard(request):
         'love_interests': love_interests,
     }
     return render(request, 'circle/dashboard.html', context)
+
+class ContactDetailView(generic.DetailView):
+    model = Contact

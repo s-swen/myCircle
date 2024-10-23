@@ -1,3 +1,4 @@
+/* General Styles */
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
@@ -28,11 +29,6 @@ header nav ul li a {
     color: #fff;
     text-decoration: none;
     font-weight: 600;
-}
-
-nav {
-    position: relative;
-    height: 50px;
 }
 
 .user-actions {
@@ -76,9 +72,11 @@ nav {
     display: block;
 }
 
+/* Sidebar and Layout */
 .dashboard {
     display: flex;
     width: 100%;
+    height: 100vh; /* Full height */
 }
 
 .sidebar {
@@ -121,18 +119,20 @@ nav {
 
 .main-content {
     flex: 1;
+    margin-left: 12%; /* Offset the content by the sidebar's width */
     padding: 25px;
     background-color: white;
-    margin-left: 20px;
     border-radius: 8px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
     width: 85%;
 }
 
+/* Circle Table */
 .circle-table {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 20px;
+    display: flex; /* Ensure categories are in a single row */
+    overflow-x: auto; /* Add horizontal scrolling for overflow */
+    gap: 20px; /* Space between categories */
+    padding-bottom: 10px;
 }
 
 .category {
@@ -141,6 +141,8 @@ nav {
     padding: 15px;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    flex: 0 0 20%; /* Each category takes up 20% of the width */
+    min-width: 200px; /* Ensures a minimum width for each category */
 }
 
 .category h3 {
@@ -158,6 +160,7 @@ nav {
     padding: 5px 0;
 }
 
+/* Button Styles */
 button {
     display: block;
     margin-top: 10px;
@@ -189,8 +192,7 @@ a:hover {
     text-decoration: underline;
 }
 
-
-
+/* Contact Detail Page */
 .contact-detail {
     display: flex;
     justify-content: center;
@@ -213,15 +215,6 @@ a:hover {
     margin-bottom: 10px;
 }
 
-.category {
-    font-size: 14px;
-    color: #9a8c98; /* Soft lavender */
-    background-color: #e0e0e0;
-    padding: 5px 10px;
-    border-radius: 20px;
-    display: inline-block;
-}
-
 .contact-body p {
     font-size: 16px;
     color: #333;
@@ -238,12 +231,7 @@ a:hover {
     text-decoration: underline;
 }
 
-.contact-footer {
-    margin-top: 20px;
-    display: flex;
-    justify-content: space-between;
-}
-
+/* Edit and Delete Buttons */
 .edit-btn, .delete-btn {
     padding: 10px 20px;
     border-radius: 25px;
@@ -266,30 +254,4 @@ a:hover {
 
 .delete-btn:hover {
     background-color: #e76f51;
-}
-
-.dashboard {
-    display: flex;
-    width: 100%;
-    height: 100vh; /* Full height */
-}
-
-.sidebar {
-    width: 12%;
-    background-color: #22223b;
-    color: white;
-    padding: 25px;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-    position: fixed; /* Sidebar stays fixed */
-    height: 100vh;
-}
-
-.main-content {
-    flex: 1;
-    margin-left: 12%; /* Offset the content by the sidebar's width */
-    padding: 25px;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-    width: 85%;
 }

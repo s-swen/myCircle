@@ -117,22 +117,16 @@ header nav ul li a {
     background-color: #4a4e69;
 }
 
-.main-content {
-    flex: 1;
-    margin-left: 12%; /* Offset the content by the sidebar's width */
-    padding: 25px;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-    width: 85%;
-}
+
 
 /* Circle Table */
 .circle-table {
-    display: flex; /* Ensure categories are in a single row */
-    overflow-x: auto; /* Add horizontal scrolling for overflow */
+    display: flex; /* Arrange categories in a row */
+    justify-content: center; /* Center the categories horizontally */
+    flex-wrap: nowrap; /* Prevent categories from wrapping */
+    overflow-x: auto; /* Enable horizontal scrolling if needed */
     gap: 20px; /* Space between categories */
-    padding-bottom: 10px;
+    padding: 20px; /* Add padding to the overall table for spacing */
 }
 
 .category {
@@ -141,8 +135,9 @@ header nav ul li a {
     padding: 15px;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-    flex: 0 0 20%; /* Each category takes up 20% of the width */
-    min-width: 200px; /* Ensures a minimum width for each category */
+    flex: 0 0 250px; /* Each category will be 250px wide */
+    min-width: 250px; /* Ensure the minimum width stays consistent */
+    box-sizing: border-box; /* Include padding and border in the width calculation */
 }
 
 .category h3 {
@@ -158,6 +153,11 @@ header nav ul li a {
 
 .category ul li {
     padding: 5px 0;
+}
+
+/* Dashboard-specific styles */
+.dashboard-content {
+    padding: 0;
 }
 
 /* Button Styles */
@@ -192,34 +192,56 @@ a:hover {
     text-decoration: underline;
 }
 
-/* Contact Detail Page */
-.contact-detail {
+
+/* Container for the entire contact details page */
+.contact-container {
     display: flex;
-    justify-content: center;
+    justify-content: center;  /* Centers the contact card horizontally */
     align-items: center;
-    min-height: 100vh;
-    background-color: #f7f8fc; /* Light background */
+    min-height: 100vh;  /* Makes sure the content takes up full viewport height */
+    padding: 20px;
+    background-color: #f7f8fc;
 }
 
+/* Contact card styling */
 .contact-card {
     background-color: white;
     border-radius: 15px;
-    padding: 30px;
+    padding: 40px;
+    width: 75%; /* 75% of the width to make it prominent but not too wide */
+    max-width: 900px; /* Prevent the card from becoming too large */
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-    max-width: 600px;
-    width: 100%;
+    box-sizing: border-box;
+    text-align: left;  /* Align text to the left */
+}
+
+/* Header section */
+.contact-header {
+    text-align: center;  /* Center the name and category */
+    margin-bottom: 20px;
 }
 
 .contact-header h2 {
     color: #4a4e69; /* Dark purple */
+    font-size: 32px; /* Larger font size for the name */
     margin-bottom: 10px;
 }
 
+.contact-header .category {
+    display: inline-block;
+    background-color: #e0e0e0;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 14px;
+    color: #6b6e97; /* Light purple */
+    margin-top: 5px;
+}
+
+/* Body section */
 .contact-body p {
-    font-size: 16px;
+    font-size: 18px;
     color: #333;
-    margin-bottom: 10px;
-    line-height: 1.5;
+    margin-bottom: 15px;
 }
 
 .contact-body a {
@@ -231,9 +253,9 @@ a:hover {
     text-decoration: underline;
 }
 
-/* Edit and Delete Buttons */
+/* Adjusting button styles for any future edit or delete buttons */
 .edit-btn, .delete-btn {
-    padding: 10px 20px;
+    padding: 12px 25px;
     border-radius: 25px;
     text-decoration: none;
     font-weight: 600;
@@ -241,7 +263,7 @@ a:hover {
 }
 
 .edit-btn {
-    background-color: #4a4e69; /* Dark purple */
+    background-color: #4a4e69;
 }
 
 .edit-btn:hover {
@@ -249,7 +271,7 @@ a:hover {
 }
 
 .delete-btn {
-    background-color: #c44536; /* Red */
+    background-color: #c44536;
 }
 
 .delete-btn:hover {

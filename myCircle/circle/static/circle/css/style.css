@@ -192,38 +192,30 @@ a:hover {
     text-decoration: underline;
 }
 
-
-/* Container for the entire contact details page */
-.contact-container {
+/* Full page wrapper to center the contact card */
+.contact-wrapper {
     display: flex;
-    justify-content: center;  /* Centers the contact card horizontally */
-    align-items: center;
-    min-height: 100vh;  /* Makes sure the content takes up full viewport height */
-    padding: 20px;
-    background-color: #f7f8fc;
+    justify-content: center; /* Centers the card horizontally */
+    align-items: center; /* Centers the card vertically */
+    min-height: 100vh; /* Full viewport height */
+    background-color: #f7f8fc; /* Light background */
 }
 
-/* Contact card styling */
+/* Styling for the contact card */
 .contact-card {
     background-color: white;
     border-radius: 15px;
     padding: 40px;
-    width: 75%; /* 75% of the width to make it prominent but not too wide */
-    max-width: 900px; /* Prevent the card from becoming too large */
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-    box-sizing: border-box;
-    text-align: left;  /* Align text to the left */
+    width: 75%; /* Makes sure the card takes up 75% of the container */
+    max-width: 900px; /* Limits the card width */
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+    text-align: center; /* Centers the text */
 }
 
-/* Header section */
-.contact-header {
-    text-align: center;  /* Center the name and category */
-    margin-bottom: 20px;
-}
-
+/* Styling for the contact header */
 .contact-header h2 {
-    color: #4a4e69; /* Dark purple */
-    font-size: 32px; /* Larger font size for the name */
+    font-size: 32px;
+    color: #4a4e69;
     margin-bottom: 10px;
 }
 
@@ -233,11 +225,11 @@ a:hover {
     padding: 5px 10px;
     border-radius: 15px;
     font-size: 14px;
-    color: #6b6e97; /* Light purple */
+    color: #6b6e97;
     margin-top: 5px;
 }
 
-/* Body section */
+/* Styling for the contact body */
 .contact-body p {
     font-size: 18px;
     color: #333;
@@ -251,29 +243,4 @@ a:hover {
 
 .contact-body a:hover {
     text-decoration: underline;
-}
-
-/* Adjusting button styles for any future edit or delete buttons */
-.edit-btn, .delete-btn {
-    padding: 12px 25px;
-    border-radius: 25px;
-    text-decoration: none;
-    font-weight: 600;
-    color: white;
-}
-
-.edit-btn {
-    background-color: #4a4e69;
-}
-
-.edit-btn:hover {
-    background-color: #6b6e97;
-}
-
-.delete-btn {
-    background-color: #c44536;
-}
-
-.delete-btn:hover {
-    background-color: #e76f51;
 }

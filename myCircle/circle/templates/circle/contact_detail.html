@@ -1,7 +1,7 @@
 {% extends 'circle/base.html' %}
 
 {% block content %}
-<div class="contact-container">
+<div class="contact-wrapper">
     <div class="contact-card">
         <div class="contact-header">
             <h2>👤 {{ contact.first_name }} {{ contact.last_name }}</h2>
@@ -12,21 +12,27 @@
             {% if contact.phone_number %}
                 <p><strong>📞 Phone:</strong> <a href="tel:{{ contact.phone_number }}">{{ contact.phone_number }}</a></p>
             {% endif %}
+            
             {% if contact.birthday %}
                 <p><strong>🎂 Birthday:</strong> {{ contact.birthday }}</p>
             {% endif %}
+            
             {% if contact.last_contact %}
                 <p><strong>📅 Last Contact:</strong> {{ contact.last_contact }}</p>
             {% endif %}
+            
             {% if contact.work %}
                 <p><strong>💼 Job:</strong> {{ contact.work }}</p>
             {% endif %}
+            
             {% if contact.instagram_handle %}
                 <p><strong>📸 Instagram:</strong> <a href="https://instagram.com/{{ contact.instagram_handle }}" target="_blank">@{{ contact.instagram_handle }}</a></p>
             {% endif %}
+            
             {% if contact.linkedin_url %}
                 <p><strong>🔗 LinkedIn:</strong> <a href="{{ contact.linkedin_url }}" target="_blank">{{ contact.linkedin_url }}</a></p>
             {% endif %}
+            
             {% if contact.note %}
                 <p><strong>📝 Note:</strong> {{ contact.note }}</p>
             {% endif %}

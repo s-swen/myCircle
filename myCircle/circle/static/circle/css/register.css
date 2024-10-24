@@ -30,21 +30,49 @@ h2 {
     margin-bottom: 20px;
 }
 
-.form-box input {
+.form-box input, .form-box select {
     width: 87%;
     padding: 10px;
     padding-left: 40px;
     border: 1px solid #ccc;
     border-radius: 25px;
     outline: none;
+    margin-bottom: 20px;
+    font-size: 14px;
+    text-align: center; /* Center the input text */
 }
 
-.form-box i {
-    position: absolute;
-    left: 10px;
-    top: 50%;
-    transform: translateY(-50%);
+.form-box label {
+    font-weight: bold;
     color: #999;
+    font-size: 14px;
+    display: inline-block;  /* Ensure label is inline */
+    margin-bottom: 5px;
+}
+
+.required {
+    color: #999;
+    font-weight: bold;
+    display: inline; /* Keep the asterisk on the same line */
+    margin-left: 2px; /* Spacing between label and asterisk */
+}
+
+/* Center the date input text and adjust placeholder color */
+input[type="date"] {
+    width: 87%;
+    padding: 10px;
+    padding-left: 40px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    outline: none;
+    margin-bottom: 20px;
+    font-size: 14px;
+    text-align: center; /* Center the input text */
+}
+
+input[type="date"]::placeholder {
+    color: #999; /* Adjust to match 'Already have an account?' */
+    text-align: center; /* Ensure the placeholder is centered */
 }
 
 .register-btn {
@@ -56,6 +84,7 @@ h2 {
     font-size: 16px;
     border-radius: 25px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 .register-btn:hover {
@@ -72,6 +101,8 @@ h2 {
     font-size: 16px;
     border-radius: 25px;
     cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
 }
 
 .login-link:hover {

@@ -14,7 +14,22 @@
         <form method="post">
             {% csrf_token %}
             <div class="form-box">
-                {{ form.as_p }}
+                <!-- Updated the Username field to include title for hover effect -->
+                <label for="username">Username: <span class="required">*</span></label>
+                <input type="text" id="username" name="username" required title="Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.">
+                
+                {{ form.email.label_tag }} <span class="required">*</span>
+                {{ form.email }}
+
+                {{ form.password.label_tag }} <span class="required">*</span>
+                {{ form.password }}
+                
+                {{ form.password_confirm.label_tag }} <span class="required">*</span>
+                {{ form.password_confirm }}
+
+                <!-- Modernized Birthday field with HTML5 date input -->
+                {{ form.birthday.label_tag }}
+                {{ form.birthday }}
             </div>
             <button type="submit" class="register-btn">Register</button>
         </form>

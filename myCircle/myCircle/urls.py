@@ -28,6 +28,7 @@ from circle import views as circle_views
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", login_required(circle_views.dashboard), name='dashboard'),
+    path('register/', circle_views.register, name='register'),
     path('accounts/', include(urls)),
     path('circle/', include('circle.urls')),
     path('logout/', auth_views.LogoutView.as_view(template_name='registration/logged_out.html'), name='logout'),

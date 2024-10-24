@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - myCircle</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'circle/css/register.css' %}">
+</head>
+<body>
+
+    <div class="register-box">
+        <h2>Sign Up</h2>
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-box">
+                {{ form.as_p }}
+            </div>
+            <button type="submit" class="register-btn">Register</button>
+        </form>
+        <p class="login-link">
+            Already have an account? <a href="{% url 'login' %}">Log In</a>
+        </p>
+    </div>
+
+</body>
+</html>

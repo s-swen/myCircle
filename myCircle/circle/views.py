@@ -1,7 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from django.contrib.auth.decorators import login_required
-from .models import Contact
+from .models import Contact, Profile
+from .forms import UserRegistrationFrom
 from django.views import generic
+from django.contrib.auth import login
 @login_required
 def dashboard(request):
     # Get the user's contacts from the database, grouped by category
@@ -28,3 +30,18 @@ def dashboard(request):
 
 class ContactDetailView(generic.DetailView):
     model = Contact
+
+def register(request):
+    if request.method == 'POST':
+        form = UserRegistrationFrom(request.POST)
+        if form.is_valid():
+            new_user = form.save(commit=False)
+            new_user.set_password(form.cleaned_data['password'])
+            new_user.save()
+
+            Profile.objects.create(user=new_user, birthday=form.cleaned_data.get('birthday'))
+            login(request, new_user)
+            return redirect('dashboard')
+    else:
+        form = UserRegistrationFrom()
+    return render(request, 'registration/register.html', {'form': form})
